@@ -28,8 +28,10 @@
     if (lunch) {
       lunch = lunch.split(',').map(function (str) {
         return str.trim();
+      }).filter(function (str) {
+        return str;
       });
-
+      console.log(lunch);
       return lunch.length;
     }
   }
