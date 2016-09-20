@@ -31,7 +31,6 @@
       }).filter(function (str) {
         return str;
       });
-      console.log(lunch);
       return lunch.length;
     }
   }
