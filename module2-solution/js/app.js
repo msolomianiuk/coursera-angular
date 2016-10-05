@@ -20,13 +20,14 @@
     };
 
     this.getBougthItems = function () {
+      console.log();
       return bought;
     };
 
     this.moveToBougth = function (index) {
       bought.push(toBuy[index]);
       toBuy.splice(index, 1);
-    }
+    };
 
   }
 
