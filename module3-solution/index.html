@@ -14,10 +14,12 @@
     <input ng-model="input" type="text" placeholder="search term" class="form-control">
     <button ng-click="ctrl.search(input)" class="btn btn-primary narrow-button">Narrow It Down For Me!</button>
   </div>
-  <p ng-if="ctrl.found.length===0" class="message">
+  <!--<p ng-if="ctrl.found.length===0" class="message">-->
+    <!--<small>Nothing found</small>-->
+  <!--</p>-->
+  <p ng-if="ctrl.isEmpty()" class="message">
     <small>Nothing found</small>
   </p>
-
   <!-- Bonus loader (see Bonus section of the assignment) -->
   <!--<items-loader-indicator></items-loader-indicator>-->
 
