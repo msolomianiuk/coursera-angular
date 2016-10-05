@@ -26,7 +26,6 @@
   function MenuSearchService($http) {
     this.getMatchedMenuItems = function(searchTerm) {
       if (searchTerm){
-        searchTerm = searchTerm.toLowerCase();
         return $http.get('https://davids-restaurant.herokuapp.com/menu_items.json').then(function (response) {
           return response.data.menu_items.filter(function (item) {
             return item.description.indexOf(searchTerm) !== -1;

@@ -1,5 +1,7 @@
 <ol>
   <li ng-repeat="item in ctrl.found">
-    {{item.name}} <a href="#" ng-click="ctrl.onRemove({index: $index})">x</a>
+    {{item.name}} <button class="btn-xs" ng-click="ctrl.onRemove({index: $index})"><small>Don't want this one!</small></button>
+    <br>
+    <small>{{item.description}}</small>
   </li>
 </ol>
