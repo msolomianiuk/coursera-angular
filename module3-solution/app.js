@@ -13,14 +13,19 @@
 
     ctrl.isEmpty = function () {
       if (ctrl.found) {
-        return ctrl.found.length===0;
+        return ctrl.found.length === 0;
       } else return false;
     };
 
     ctrl.search = function (searchTerm) {
-      MenuSearchService.getMatchedMenuItems(searchTerm).then(function (data) {
-        ctrl.found = data;
-      });
+      var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
+      if(promise){
+        promise.then(function (data) {
+          ctrl.found = data;
+        })
+      } else {
+        ctrl.found = [];
+      }
     };
 
     ctrl.removeItem = function (index) {
@@ -30,12 +35,12 @@
 
   MenuSearchService.$inject = ['$http'];
   function MenuSearchService($http) {
-    this.getMatchedMenuItems = function(searchTerm) {
-      if (searchTerm){
+    this.getMatchedMenuItems = function (searchTerm) {
+      if (searchTerm) {
         return $http.get('https://davids-restaurant.herokuapp.com/menu_items.json').then(function (response) {
           return response.data.menu_items.filter(function (item) {
             return item.description.indexOf(searchTerm) !== -1;
-          });
+          })
         });
       }
     }
