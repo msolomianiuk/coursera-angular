@@ -4,10 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Restaurant</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
-<body>
+<body ng-app="MenuApp">
+
+<div class="container">
+  <ui-view class="text-center"></ui-view>
+</div>
+
+<!--Libraries-->
+<script src="lib/angular.min.js"></script>
+<script src="lib/angular-ui-router.min.js"></script>
+
+<!--Modules-->
+<script src="src/js/module/menuapp.module.js"></script>
+<script src="src/js/module/data.module.js"></script>
+
+<!--Services-->
+<script src="src/js/service/menudata.service.js"></script>
+
+<!--Components-->
+<script src="src/js/component/categories.component.js"></script>
+<script src="src/js/component/items.component.js "></script>
+
+<!--Controllers-->
+<script src="src/js/controller/categories.controller.js"></script>
+<script src="src/js/controller/items.controller.js"></script>
+
+<!--Routes-->
+<script src="src/js/routes.js"></script>
 
 </body>
 </html>
